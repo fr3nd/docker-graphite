@@ -30,6 +30,7 @@ RUN pip install \
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 COPY carbon.conf /opt/graphite/conf/carbon.conf
 COPY storage-schemas.conf /opt/graphite/conf/storage-schemas.conf
+COPY storage-aggregation.conf /opt/graphite/conf/storage-aggregation.conf
 COPY graphite-api.yaml /etc/graphite-api.yaml
 COPY nginx.conf /etc/nginx/nginx.conf
 
