@@ -31,6 +31,7 @@ COPY supervisord.conf /etc/supervisor/supervisord.conf
 COPY carbon.conf /opt/graphite/conf/carbon.conf
 COPY storage-schemas.conf /opt/graphite/conf/storage-schemas.conf
 COPY storage-aggregation.conf /opt/graphite/conf/storage-aggregation.conf
+COPY aggregation-rules.conf /opt/graphite/conf/aggregation-rules.conf
 COPY graphite-api.yaml /etc/graphite-api.yaml
 COPY nginx.conf /etc/nginx/nginx.conf
 
@@ -38,6 +39,8 @@ EXPOSE 80
 EXPOSE 2003
 EXPOSE 2004
 EXPOSE 7002
+EXPOSE 2023
+EXPOSE 2024
 
 VOLUME /opt/graphite/storage
 
