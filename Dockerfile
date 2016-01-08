@@ -15,17 +15,14 @@ RUN apt-get update && apt-get install -y \
       rm -rf /tmp/* && \
       rm -rf /var/tmp/*
 
-ENV GRAPHITE_VERSION 0.9.13
-ENV GRAPHITE_API_VERSION 1.1
+ENV GRAPHITE_VERSION 0.9.15
+ENV GRAPHITE_API_VERSION 1.1.2
 
 RUN pip install \
       whisper==$GRAPHITE_VERSION \
       carbon==$GRAPHITE_VERSION \
       graphite-api==$GRAPHITE_API_VERSION \
       gunicorn==19.3.0
-      #Django==1.8.5 \
-      #django-tagging==0.4 \
-      #gunicorn==19.3.0
 
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 COPY carbon.conf /opt/graphite/conf/carbon.conf
